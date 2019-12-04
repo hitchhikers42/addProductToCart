@@ -1,28 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+import Select from 'react-select';
 
-const defaultOption = options[0];
+//const defaultOption = options[0];
 
 const options = [
-  { value: 'one', label: 'One' },
-  { value: 'two', label: 'Two', className: 'myOptionClassName' },
-  {
-   type: 'group', name: 'group1', items: [
-     { value: 'three', label: 'Three', className: 'myOptionClassName' },
-     { value: 'four', label: 'Four' }
-   ]
-  },
-  {
-   type: 'group', name: 'group2', items: [
-     { value: 'five', label: 'Five' },
-     { value: 'six', label: 'Six' }
-   ]
-  }
+  { value: 'one', label: '1' },
+  { value: 'two', label: '2' },
+  { value: 'three', label: '3' },
+  { value: 'four', label: '4' },
+  { value: 'five', label: '5' },
+  { value: 'six', label: '6' },
+  { value: 'seven', label: '7' },
+  { value: 'eight', label: '8' },
+  { value: 'nine', label: '9' },
+  { value: 'ten', label: '10+' }
 ]
 
-<Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+export default options;
+
+// const StyledSelect = styled(Select)`
+//   width: 150px !important;
+// `
+
+
+
+{/* <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
 
 <Dropdown disabled onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
 
@@ -41,4 +44,4 @@ const options = [
   arrowOpen={<span className="arrow-open" />}
 />
 
-export default options;
+export default options; */}
