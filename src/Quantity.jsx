@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Select from 'react-select';
 
-//const defaultOption = options[0];
+
+//need to adjust width of menu
 
 const options = [
   { value: 'one', label: '1' },
@@ -17,31 +17,10 @@ const options = [
   { value: 'ten', label: '10+' }
 ]
 
+const defaultOption = options[0];
+
 export default options;
 
 // const StyledSelect = styled(Select)`
 //   width: 150px !important;
 // `
-
-
-
-{/* <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
-
-<Dropdown disabled onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
-
-<Dropdown className='myClassName' />
-
-<Dropdown controlClassName='myControlClassName' />
-
-<Dropdown placeholderClassName='myPlaceholderClassName' />
-
-<Dropdown menuClassName='myMenuClassName' />
-
-<Dropdown arrowClassName='myArrowClassName' />
-
-<Dropdown
-  arrowClosed={<span className="arrow-closed" />}
-  arrowOpen={<span className="arrow-open" />}
-/>
-
-export default options; */}

@@ -17,6 +17,8 @@ class App extends React.Component {
     console.log(`Option selected:`, selectedOption);
   };
   render() {
+    const { selectedOption } = this.state;
+
     return (
       <Select
         value={this.state.selectedOption}
