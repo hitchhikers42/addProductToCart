@@ -30,6 +30,9 @@
   },
   "homepage": "https://github.com/hitchhikers42/addProductToCart#readme",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@material-ui/core": "^4.7.1",
+    "@material/menu": "^4.0.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
@@ -38,7 +41,6 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0",
     "react-select": "^3.0.8",
     "webpack-dev-server": "^3.9.0"
   },

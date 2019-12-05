@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-//app.use(express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../dist'));
 
 //lists all available products
 app.get('/api/products', (req, res) => {
@@ -54,7 +54,8 @@ app.post('/api/auth', (req, res) => { //signs in user
   }
 });
 
-app.get('/api/pay', middleware, (req, res) => { //checkout route for signed in users
+//checkout route for signed in users
+app.get('/api/pay', middleware, (req, res) => {
   return res.json("Payment Successful");
 });
 
