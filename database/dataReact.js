@@ -5,9 +5,9 @@ const products = [
   bucket: 'mockbbb',
   title: 'Breville® The Barista Express™ Espresso Machine',
   }
-]
+];
 
-exports.default = products
+export default products;
 
 /*
   const product = data.product;
