@@ -3,7 +3,7 @@
   justify-content: flex-start;
 }
 
-.component-box{
+/* .component-box{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -15,4 +15,172 @@
   margin-left: 22px;
   background-color: rgba(255, 255, 255, 100);
   opacity: 1;
+} */
+
+body {
+background-image: url("");
+background-repeat: repeat-x repeat-y;
+background-position: center top;
+background-attachment: fixed;
+
 }
+
+.cartAll{
+  color:rgb(0, 0, 0);
+  white-space: nowrap;
+  padding: 1px;
+  position:relative;
+  font-size: 14px;
+  font-family: Montserrat,Helvetica,Arial,sans-serif;
+  font: Montserrat,Helvetica,Arial,sans-serif;
+  margin-bottom: 2px;
+  outline:none;
+  }
+
+  .cartUser{
+    color:rgb(0, 0, 0);
+    white-space: nowrap;
+    padding: 1px;
+    position:relative;
+    font-size: 14px;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    font: Montserrat,Helvetica,Arial,sans-serif;
+    margin-bottom: 2px;
+    outline:none;
+    }
+
+/* .quantity{
+  height: 55px;
+} */
+
+.addItem{
+background:rgb(0, 59, 222);
+color:rgb(255, 255, 255);
+cursor:pointer;
+border:none;
+position:relative;
+width: 280px;
+height: 50px;
+font-size: 14px;
+font-family: Montserrat,Helvetica,Arial,sans-serif;
+font: Montserrat,Helvetica,Arial,sans-serif;
+border-radius: 4px;
+margin-top: 10px;
+margin-bottom: 8px;
+padding: 7px;
+transition:333ms ease all;
+outline:none;
+}
+
+.addItem:hover{
+background:rgb(0, 96, 222);
+color:rgb(255, 255, 255);
+}
+
+.addItem:after{
+right:inherit;
+top:inherit;
+left:0;
+bottom:0;
+}
+
+.addItem:hover:before,button:hover:after{
+width:100%;
+transition:333ms ease all;
+}
+
+
+
+.removeItem{
+  background:rgb(0, 59, 222);
+  color:rgb(255, 255, 255);
+  cursor:pointer;
+  border:none;
+  position:relative;
+  width: 280px;
+  height: 50px;
+  font-size: 14px;
+  font-family: Montserrat,Helvetica,Arial,sans-serif;
+  font: Montserrat,Helvetica,Arial,sans-serif;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 7px;
+  transition:333ms ease all;
+  outline:none;
+  }
+
+  .removeItem:hover{
+  background:rgb(0, 96, 222);
+  color:rgb(255, 255, 255);
+  }
+
+  .removeItem:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+  }
+
+  .removeItem:hover:before,button:hover:after{
+  width:100%;
+  transition:333ms ease all;
+  }
+
+.addRegistry{
+  background:rgb(255,255,255);
+  color:rgb(0, 78, 222);
+  white-space: nowrap;
+  padding: .5em 1.5em;
+  border-width:2px;
+  border-style: solid;
+  border-color: rgb(214, 214, 214);
+  position:relative;
+  width: 280px;
+  height: 50px;
+  font-size: 14px;
+  font-family: Montserrat,Helvetica,Arial,sans-serif;
+  font: Montserrat,Helvetica,Arial,sans-serif;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 7px;
+  cursor:pointer;
+  transition:333ms ease all;
+  outline:none;
+  }
+
+  .addRegistry:hover{
+  background:rgb(0, 78, 222);
+  color:rgb(255, 255, 255);
+  border-width:2px;
+  border-style: solid;
+  border-color: rgb(0, 78, 222);
+  }
+
+  .addRegistry:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+  }
+
+  .addRegistry:hover:before,button:hover:after{
+  width:100%;
+  transition:333ms ease all;
+  }
+
+  .delivery{
+    position:relative;
+    height:55px;
+    width: 280px;
+    font-size: 14px;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    font: Montserrat,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    cursor:pointer;
+    outline:none;
+    height: 50px;
+    }
+

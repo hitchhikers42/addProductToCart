@@ -16,7 +16,7 @@ const options = [
   { value: 'seven', label: '7' },
   { value: 'eight', label: '8' },
   { value: 'nine', label: '9' },
-  { value: 'ten', label: '10+' }
+  { value: 'ten', label: '10' }
 ]
 
 const defaultOption = options[0];

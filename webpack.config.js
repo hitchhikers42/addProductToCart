@@ -1,9 +1,5 @@
 module.exports = {
-<<<<<<< HEAD
   entry: './src/Index.jsx',
-=======
-  entry: './src/index.jsx',
->>>>>>> master
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
