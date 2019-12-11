@@ -5,6 +5,7 @@ const save = require('../database/index.js').save;
 const del = require('../database/index.js').del;
 // const fetchAll = require('../database/index.js').fetchAll;
 const data = require('../database/data.js');
+const fetchProduct = require('../database/index.js').fetchProduct
 // const app = express();
 // const jwt = require('jsonwebtoken');
 // const cors = require('cors');
@@ -23,15 +24,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../dist'));
+app.use('/products/:productId', express.static(__dirname + '/../dist'));
 
-app.get('/api/itemModule', function(req, res) {
-  res.send('hello world! Jesus is King!');
+app.get('/api/products/:productId/', async (req, res) => {
+  const id = req.params.productId;
+  const fetchedProduct = await fetchProduct(id);
+  res.send(fetchedProduct);
+
+
+  //res.send('hello world! Jesus is King!');
+  // let query = data.find(({}));
+  // query.where('productId')
   //status(200);
   //module2.find({}).then(result => {
-  //   res.send(result);
+    // res.send('hello');
   // });
 });
-//something like this
+//something not like this
 // axios('/api/product', {
 //   method: 'POST',
 //   body: {title: 'asdf', imageKey: 'asdfqwer', productId: 'qevfq', }

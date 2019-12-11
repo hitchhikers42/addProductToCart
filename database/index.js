@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const mongoUri = 'mongodb://localhost/product';
 
 const db=mongoose.connect(mongoUri);
-//////////////////
+
 exports.default = db;
 
 const schema = new mongoose.Schema({
@@ -40,9 +40,16 @@ let fetchAll = callback => {
   })
 };
 
+const fetchProduct = async prodId => await Product.find({productId: prodId}).exec()
+
+
+
+// fetchProduct();
+
 exports.fetchAll = fetchAll;
 exports.save = save;
 exports.del = del;
+exports.fetchProduct = fetchProduct;
 
 
 //U+1F6D2 🛒
