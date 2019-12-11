@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const mongoUri = 'mongodb://localhost/product';
 
 const db=mongoose.connect(mongoUri);
+//////////////////
+exports.default = db;
 
 const schema = new mongoose.Schema({
   imageKey: String,
@@ -41,6 +43,6 @@ let fetchAll = callback => {
 exports.fetchAll = fetchAll;
 exports.save = save;
 exports.del = del;
-exports.default = db;
+
 
 //U+1F6D2 🛒

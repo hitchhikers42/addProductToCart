@@ -27,11 +27,11 @@ app.use(express.static(__dirname + '/../dist'));
 app.get('/api/itemModule', function(req, res) {
   res.send('hello world! Jesus is King!');
   //status(200);
-  //module2.find().sort({createdAt: 1}).then(result => {
+  //module2.find({}).then(result => {
   //   res.send(result);
   // });
 });
-
+//something like this
 // axios('/api/product', {
 //   method: 'POST',
 //   body: {title: 'asdf', imageKey: 'asdfqwer', productId: 'qevfq', }

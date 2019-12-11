@@ -27,16 +27,16 @@ const ExpansionPanelSummary = withStyles({
   root: {
     backgroundColor: 'rgb(255, 255, 255)',
     //borderBottom: '2px solid rgb(255, 255, 255)',
-    marginBottom: 5,
-    minHeight: 60,
+    marginBottom: 2,
+    minHeight: 20,
     '&$expanded': {
-      minHeight: 60,
+      minHeight: 20,
     },
     textAline: 'center',
   },
   content: {
     '&$expanded': {
-      margin: '16px 2',
+      margin: '5px 2',
     },
   },
   expanded: {},
@@ -62,14 +62,15 @@ export default function CustomizedExpansionPanels() {
           <Typography>Delivery & Pickup</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography style={{fontSize:"12px"}}>
-              <span>Shipping To 80301  </span>
-              <span style={{marginLeft:"25px", cursor:"pointer", color:"blue", textDecoration:"underline"}} >Change Zip</span>
+          <Typography>
+              <span style={{fontSize:"14px"}}>Shipping To 80301  </span>
+              <span style={{fontSize:"12px", marginLeft:"5px", cursor:"pointer", color:"blue", textDecoration:"underline"}} >Change Zip</span>
               {/* color="blue" textDecoration="underline" */}
+
               <br />
-              Standard Shipping
+              <span style={{fontSize:"14px"}}> Standard Shipping</span>
               <br />
-              Usually ships in 24 hours
+              <span style={{fontSize:"14px"}}>Usually ships in 24 hours</span>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -79,7 +80,7 @@ export default function CustomizedExpansionPanels() {
           <Typography>Shipping Details</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography style={{fontSize:"14px", marginLeft:"5px", cursor:"pointer", color:"blue", textDecoration:"underline"}}>
             Shipping policy
           </Typography>
         </ExpansionPanelDetails>
@@ -90,7 +91,7 @@ export default function CustomizedExpansionPanels() {
           <Typography>Price Match Promise</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography style={{fontSize:"14px", marginLeft:"5px", cursor:"pointer", color:"blue", textDecoration:"underline"}}>
               Price Match Promise
           </Typography>
         </ExpansionPanelDetails>
