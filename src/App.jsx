@@ -2,14 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 import options from './Quantity.jsx';
-import AddItem from './AddItem.jsx';
 import CustomizedExpansionPanels from './Delivery.jsx';
 import CustomizedExpansionPanels2 from './Shipping.jsx';
 import CustomizedExpansionPanels3 from './PriceMatch.jsx';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import Product from './AddItem.jsx';
 import simpleModal from './Cart.jsx';
-import data from '../database/dataReact.js'
+import data from '../database/data.js'
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import '@babel/polyfill'
@@ -36,6 +34,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.loadProduct()
+    console.log(data);
     console.log("ComponentDidMount: Guess what? The component mounted!")
     axios({
       method: 'GET',
@@ -104,7 +103,7 @@ class App extends React.Component {
     } = this.state;
     const inCart = this.state.selectedOption
 
-    const product = data[0];
+    const product = this.state.currentProduct[0];
 
     //when I click add to cart, it has to use the id of the  product to the cart.
 
@@ -127,9 +126,9 @@ class App extends React.Component {
           />
         </div>
 
-      {/* <div className="cartAll">
-        🛒 ___ people have this in their cart
-      </div> */}
+      <div className="cartAll">
+        Selected Item: {this.state.currentProduct.title}
+      </div>
 
       <div className="cartUser">
        {this.state.cartItems.length} items in your 🛒

@@ -1,17 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const module2 = require('../database/index.js');
 const save = require('../database/index.js').save;
 const del = require('../database/index.js').del;
-// const fetchAll = require('../database/index.js').fetchAll;
 const data = require('../database/data.js');
 const fetchProduct = require('../database/index.js').fetchProduct
-// const app = express();
-// const jwt = require('jsonwebtoken');
-// const cors = require('cors');
-// const bodyParser = require('body-parser');
-// const data = require('../database/index.js');
-// const middleware = require('./middleware');
 
 const app = express();
 const PORT = 8800;
@@ -30,22 +22,7 @@ app.get('/api/products/:productId/', async (req, res) => {
   const id = req.params.productId;
   const fetchedProduct = await fetchProduct(id);
   res.send(fetchedProduct);
-
-
-  //res.send('hello world! Jesus is King!');
-  // let query = data.find(({}));
-  // query.where('productId')
-  //status(200);
-  //module2.find({}).then(result => {
-    // res.send('hello');
-  // });
 });
-//something not like this
-// axios('/api/product', {
-//   method: 'POST',
-//   body: {title: 'asdf', imageKey: 'asdfqwer', productId: 'qevfq', }
-// })
-
 
 //this will save a new product
 app.post('/api/save-product', (req, res) => {
