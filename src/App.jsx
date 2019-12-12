@@ -6,11 +6,13 @@ import CustomizedExpansionPanels from './Delivery.jsx';
 import CustomizedExpansionPanels2 from './Shipping.jsx';
 import CustomizedExpansionPanels3 from './PriceMatch.jsx';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import simpleModal from './Cart.jsx';
+import SimpleModal from './Cart.jsx';
 import data from '../database/data.js'
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import '@babel/polyfill'
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
 
 // https://www.npmjs.com/package/react-shopping-cart will this help?
 
@@ -25,17 +27,19 @@ class App extends React.Component {
       cartItems: [],
       currentProduct: [],
       currentImage: "",
+      open: false
     }
     this.handleChange = this.handleChange.bind(this)
-    this.handleButton = this.handleButton.bind(this)
     this.add = this.add.bind(this);
     this.subtract = this.subtract.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   componentDidMount() {
     this.loadProduct()
-    console.log(data);
+    //console.log(data);
     console.log("ComponentDidMount: Guess what? The component mounted!")
+    const id = Math.floor(Math.random() * 100) + 1;
     axios({
       method: 'GET',
       url: '/api/products',
@@ -87,12 +91,11 @@ class App extends React.Component {
     console.log(`Option added:`, selectedOption);
   };
 
-  handleButton(qty) {
-    this.setState({
-      qty: this.state.qty * this.state.selectedOption
-    });
-    console.log(`Quantity added:`, qty);
-  }
+  handleModal(e){
+    e.preventDefault();
+    return <SimpleModal />
+  };
+
 
   // product: find what is selected and then add that item to the cart
   // registry: find what is selected and then add that item to the registry
@@ -102,13 +105,13 @@ class App extends React.Component {
       selectedOption
     } = this.state;
     const inCart = this.state.selectedOption
-
     const product = this.state.currentProduct[0];
 
     //when I click add to cart, it has to use the id of the  product to the cart.
 
     return (
       <div className="parent" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+
       <div><img className="productImg" src={`${this.state.currentImage}`} /></div>
 
         <div  className="quantity" style={{display: 'inlineBlock', width: '280px', marginBottom: '20px', fontSize: '14px', fontWeight: 'bold', select: {height: '50px'}}}>
@@ -126,17 +129,16 @@ class App extends React.Component {
           />
         </div>
 
-      <div className="cartAll">
-        Selected Item: {this.state.currentProduct.title}
+      <div className="currentItem">
+         Selected Item: <span className="itemName"> {product ? product.title : null} </span>
       </div>
 
-      <div className="cartUser">
-       {this.state.cartItems.length} items in your 🛒
+      <div className="cartUser" >
+       {this.state.cartItems.length} items in your:
       </div>
-
+        <SimpleModal />
       <div>
         <button className="addItem" type="button" onClick={() => this.add(product.productId)}>
-        {/* <button className="addItem" type="button" onClick={this.handleButton}> */}
           Add to Cart
         </button>
       </div>
