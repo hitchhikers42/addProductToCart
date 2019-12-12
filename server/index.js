@@ -17,9 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../dist'));
 app.use('/products/:productId', express.static(__dirname + '/../dist'));
-// /:productId'
 
-app.get('/api/products/:productId', async (req, res) => {
+app.get('/api/products/:productId/', async (req, res) => {
   const id = req.params.productId;
   const fetchedProduct = await fetchProduct(id);
   res.send(fetchedProduct);
