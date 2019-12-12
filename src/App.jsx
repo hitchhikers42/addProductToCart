@@ -10,13 +10,9 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Product from './AddItem.jsx';
 import simpleModal from './Cart.jsx';
 import data from '../database/dataReact.js'
-//import AddRegistry from './AddRegistry.jsx';
-//import login from './Login.jsx';
-//import Products from './ProductList.jsx';
-//import Cart from './Cart.jsx';
-//import CheckOut from './CheckOut.jsx';
-// import {  BrowserRouter as Router, Link, Route } from 'react-router-dom';
-// import { isAuthenticated } from '../server/repository.js';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import '@babel/polyfill'
 
 // https://www.npmjs.com/package/react-shopping-cart will this help?
 
@@ -29,12 +25,8 @@ class App extends React.Component {
       qty: 0, //initially starts at zero
       total: 0,
       cartItems: [],
-      //addedOption: null,    /* this is what is selected */
-      //added: '',            /* added to shopping cart */
-      //addRegistry: '',      /* this is what is selected for the registry */
-      //registry: [],         /* this is the item in the registry */
-      //addCart: null,          /* add item to shopping cart */
-      //cart: []              /* shopping cart */
+      currentProduct: [],
+      currentImage: "",
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleButton = this.handleButton.bind(this)
@@ -43,6 +35,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.loadProduct()
     console.log("ComponentDidMount: Guess what? The component mounted!")
     axios({
       method: 'GET',
@@ -60,32 +53,24 @@ class App extends React.Component {
       })
   }
 
+  async loadProduct() {
+    const productId = window.location.pathname.split('/')[2];
+    const response = await fetch(`/api/products/${productId}`);
+    const myJSON = await response.json();
+    this.setState({currentProduct: myJSON,
+    currentImage: myJSON[0].imageKey});
+    console.log(this.state.currentProduct[0].imageKey)
+  }
+
   add(id) {
-    //option = this.state.selectedOption
-    //let quantity =
-    // this.setState({
-    //   qty: this.state.qty + Number(this.state.selectedOption.label)
-    // });
-    // console.log(this.state.selectedOption)
-    //this.props.handleTotal(this.props.price);
     const newItems = [...this.state.cartItems];
     // console.log(new Array(Number(this.state.selectedOption.label)))
     const emptyArray = Array.apply(5, Array(Number(this.state.selectedOption.label)));
     emptyArray.forEach(() => newItems.push(id))
-    // emptyArray.map(n => console.log('asdf'))
-    // new Array(Number(this.state.selectedOption.label)).forEach(() => newItems.push(id));
-    // newItems.push(id)
     this.setState({ cartItems: newItems })
   }
 
   subtract() {
-    // let quantity = this.state.qty - Number(this.state.selectedOption.label);
-    // if (quantity < 0) {
-    //   quantity = 0;
-    // }
-    // this.setState({
-    //   qty: quantity
-    // });
     const newItems = [...this.state.cartItems];
     // console.log(new Array(Number(this.state.selectedOption.label)))
     const emptyArray = Array.apply(5, Array(Number(this.state.selectedOption.label)));
@@ -125,7 +110,9 @@ class App extends React.Component {
 
     return (
       <div className="parent" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-        <div className="quantity" style={{display: 'inlineBlock', width: '280px', marginBottom: '20px', fontSize: '14px', fontWeight: 'bold', select: {height: '50px'}}}>
+      <div><img className="productImg" src={`${this.state.currentImage}`} /></div>
+
+        <div  className="quantity" style={{display: 'inlineBlock', width: '280px', marginBottom: '20px', fontSize: '14px', fontWeight: 'bold', select: {height: '50px'}}}>
           <Select
             value={this.state.selectedOption.label}
             onChange={this.handleChange}
