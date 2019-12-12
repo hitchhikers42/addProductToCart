@@ -25,8 +25,8 @@ background-attachment: fixed;
 
 }
 
-.cartAll{
-  color:rgb(0, 0, 0);
+.currentItem{
+  color:rgb(135, 135, 135);
   white-space: nowrap;
   padding: 1px;
   position:relative;
@@ -35,6 +35,21 @@ background-attachment: fixed;
   font: Montserrat,Helvetica,Arial,sans-serif;
   margin-bottom: 2px;
   outline:none;
+  }
+
+  .itemName {
+    color:rgb(135, 135, 135);
+    white-space: wrap;
+    /* border-width:2px;
+    border-style: solid;
+    border-color: rgb(135, 135, 135); */
+    padding: 1px;
+    position:relative;
+    font-size: 16px;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    font: Montserrat,Helvetica,Arial,sans-serif;
+    margin-bottom: 2px;
+    outline:none;
   }
 
   .cartUser{
@@ -66,7 +81,7 @@ font-family: Montserrat,Helvetica,Arial,sans-serif;
 font: Montserrat,Helvetica,Arial,sans-serif;
 border-radius: 4px;
 margin-top: 10px;
-margin-bottom: 8px;
+margin-bottom: 6px;
 padding: 7px;
 transition:333ms ease all;
 outline:none;
@@ -103,7 +118,7 @@ transition:333ms ease all;
   font-family: Montserrat,Helvetica,Arial,sans-serif;
   font: Montserrat,Helvetica,Arial,sans-serif;
   border-radius: 4px;
-  margin-top: 10px;
+  margin-top: 2px;
   margin-bottom: 8px;
   padding: 7px;
   transition:333ms ease all;
