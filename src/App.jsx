@@ -39,7 +39,6 @@ class App extends React.Component {
     this.loadProduct()
     //console.log(data);
     console.log("ComponentDidMount: Guess what? The component mounted!")
-    const id = Math.floor(Math.random() * 100) + 1;
     axios({
       method: 'GET',
       url: '/api/products',
