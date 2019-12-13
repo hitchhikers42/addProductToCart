@@ -26,7 +26,7 @@ background-attachment: fixed;
 }
 
 .currentItem{
-  color:rgb(135, 135, 135);
+  color:rgb(0, 0, 0);
   white-space: nowrap;
   padding: 1px;
   position:relative;
@@ -38,7 +38,7 @@ background-attachment: fixed;
   }
 
   .itemName {
-    color:rgb(135, 135, 135);
+    color:rgb(0, 96, 222);
     white-space: wrap;
     /* border-width:2px;
     border-style: solid;
@@ -51,6 +51,18 @@ background-attachment: fixed;
     margin-bottom: 2px;
     outline:none;
   }
+
+  .modalQtyItem{
+    color:rgb(0, 0, 0);
+    white-space: nowrap;
+    padding: 1px;
+    position:relative;
+    font-size: 14px;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    font: Montserrat,Helvetica,Arial,sans-serif;
+    margin-bottom: 2px;
+    outline:none;
+    }
 
   .cartUser{
     color:rgb(0, 0, 0);
@@ -103,8 +115,6 @@ bottom:0;
 width:100%;
 transition:333ms ease all;
 }
-
-
 
 .removeItem{
   background:rgb(0, 59, 222);
@@ -165,23 +175,23 @@ transition:333ms ease all;
   }
 
   .addRegistry:hover{
-  background:rgb(0, 78, 222);
-  color:rgb(255, 255, 255);
-  border-width:2px;
-  border-style: solid;
-  border-color: rgb(0, 78, 222);
+    background:rgb(0, 78, 222);
+    color:rgb(255, 255, 255);
+    border-width:2px;
+    border-style: solid;
+    border-color: rgb(0, 78, 222);
   }
 
   .addRegistry:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
   }
 
   .addRegistry:hover:before,button:hover:after{
-  width:100%;
-  transition:333ms ease all;
+    width:100%;
+    transition:333ms ease all;
   }
 
   .delivery{
@@ -197,7 +207,7 @@ transition:333ms ease all;
     cursor:pointer;
     outline:none;
     height: 50px;
-    }
+  }
 
     .productImg {
       position: relative;
@@ -223,6 +233,42 @@ transition:333ms ease all;
       width: 100px;
 
     }
+
+    .modalSelectedItem {
+      color:rgb(0, 0, 0);
+      white-space: nowrap;
+      padding: 1px;
+      position:relative;
+      font-size: 14px;
+      font-family: Montserrat,Helvetica,Arial,sans-serif;
+      font: Montserrat,Helvetica,Arial,sans-serif;
+      margin-bottom: 2px;
+      outline:none;
+      }
+
+    .modalProductColor {
+      color:rgb(0, 0, 0);
+      white-space: nowrap;
+      padding: 1px;
+      position:relative;
+      font-size: 14px;
+      font-family: Montserrat,Helvetica,Arial,sans-serif;
+      font: Montserrat,Helvetica,Arial,sans-serif;
+      margin-bottom: 2px;
+      outline:none;
+      }
+
+    .modalQty {
+      color:rgb(0, 0, 0);
+      white-space: nowrap;
+      padding: 1px;
+      position:relative;
+      font-size: 14px;
+      font-family: Montserrat,Helvetica,Arial,sans-serif;
+      font: Montserrat,Helvetica,Arial,sans-serif;
+      margin-bottom: 2px;
+      outline:none;
+      }
 
     .keepShopping{
       background:rgb(255,255,255);

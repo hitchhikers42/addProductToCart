@@ -108,7 +108,7 @@ export default function SimpleModal() {
                   {/* blank */}
                 </td>
                 <td>
-                  <p id="modalQty" className="currentItem"> ____ item(s): $777.77</p>
+                  <p id="modalQty" className="modalQtyItem"> ____ item(s): <span className="itemName">$777.77</span></p>
                 </td>
               </tr>
             </tbody>
@@ -117,7 +117,7 @@ export default function SimpleModal() {
               {/* table 3 - 3 row 2 columns */}
               <tr>
                 <td>
-                  <p className="currentItem" id="simple-modal-description">Item in 🛒: <span className="itemName">{ faker.commerce.productName() } </span></p>
+                  <p className="modalSelectedItem" id="simple-modal-description">Item in 🛒: <span className="itemName">{ faker.commerce.productName() } </span></p>
                 </td>
                 <td>
                   {/* blank */}
@@ -127,7 +127,7 @@ export default function SimpleModal() {
                 </td>
               </tr>
               <tr>
-                <td className="currentItem">
+                <td className="modalProductColor">
                   Stainless Steel
                 </td>
                 <td>
@@ -139,7 +139,7 @@ export default function SimpleModal() {
               </tr>
               <tr>
                 <td>
-                  <p id="modalQty" className="currentItem"> Quantity __</p>
+                  <p id="modalQty" className="modalQty"> Quantity __</p>
                 </td>
                 <td>
                   {/* blank */}
