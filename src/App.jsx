@@ -56,7 +56,7 @@ class App extends React.Component {
   }
 
   async loadProduct() {
-    const productId = window.location.pathname.split('/')[2];
+    const productId = window.location.pathname.split('/')[2] ;
     const response = await fetch(`/api/products/${productId}`);
     const myJSON = await response.json();
     this.setState({currentProduct: myJSON,
@@ -92,7 +92,7 @@ class App extends React.Component {
 
   handleModal(e){
     e.preventDefault();
-    return <SimpleModal />
+    return <SimpleModal/>
   };
 
 

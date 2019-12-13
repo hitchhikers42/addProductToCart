@@ -213,3 +213,91 @@ transition:333ms ease all;
       margin: 20px 2px 20px 2px;
     }
 
+    .modalHeader {
+      font-size: 18px;
+      font-family: Montserrat,Helvetica,Arial,sans-serif;
+      font: Montserrat,Helvetica,Arial,sans-serif;
+    }
+
+    #simple-modal-title {
+      width: 100px;
+
+    }
+
+    .keepShopping{
+      background:rgb(255,255,255);
+      color:rgb(0, 78, 222);
+      white-space: nowrap;
+      padding: .5em 1.5em;
+      border-width:2px;
+      border-style: solid;
+      border-color: rgb(214, 214, 214);
+      position:relative;
+      width: 280px;
+      height: 50px;
+      font-size: 14px;
+      font-family: Montserrat,Helvetica,Arial,sans-serif;
+      font: Montserrat,Helvetica,Arial,sans-serif;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      padding: 7px;
+      cursor:pointer;
+      transition:333ms ease all;
+      outline:none;
+      }
+
+      .keepShopping:hover{
+        background:rgb(0, 78, 222);
+        color:rgb(255, 255, 255);
+        border-width:2px;
+        border-style: solid;
+        border-color: rgb(0, 78, 222);
+      }
+
+      .keepShopping:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+
+      .keepShopping:hover:before,button:hover:after{
+        width:100%;
+        transition:333ms ease all;
+      }
+
+      .checkout{
+        background:rgb(0, 59, 222);
+        color:rgb(255, 255, 255);
+        cursor:pointer;
+        border:none;
+        position:relative;
+        width: 280px;
+        height: 50px;
+        font-size: 14px;
+        font-family: Montserrat,Helvetica,Arial,sans-serif;
+        font: Montserrat,Helvetica,Arial,sans-serif;
+        border-radius: 4px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+        padding: 7px;
+        transition:333ms ease all;
+        outline:none;
+      }
+
+      .checkout:hover{
+        background:rgb(0, 96, 222);
+        color:rgb(255, 255, 255);
+      }
+
+      .checkout:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+
+      .checkout:hover:before,button:hover:after{
+        width:100%;
+        transition:333ms ease all;
+      }
