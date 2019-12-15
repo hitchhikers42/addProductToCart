@@ -7,7 +7,8 @@
     "test": "nothing yet",
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "db:setup": "node database/seed.js"
+    "db:setup": "node database/seed.js",
+    "start-aws": "ssh -i '~/.ssh/RonFEC42.pem' ec2-user@ec2-18-219-28-109.us-east-2.compute.amazonaws.com"
   },
   "repository": {
     "type": "git",

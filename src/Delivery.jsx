@@ -63,7 +63,7 @@ export default function CustomizedExpansionPanels() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-              <span style={{fontSize:"14px"}}>Shipping To 80301  </span>
+              <span style={{fontSize:"14px"}}>Shipping To 90210  </span>
               <span style={{fontSize:"12px", marginLeft:"5px", cursor:"pointer", color:"blue", textDecoration:"underline"}} >Change Zip</span>
               {/* color="blue" textDecoration="underline" */}
 
