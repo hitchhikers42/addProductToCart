@@ -9,8 +9,8 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 'auto';
+  const left = 'auto';
 
   return {
     top: `${top}%`,
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     height: 600,
     maxWidth: 600,
     maxHeight: 600,
-    // margin: '2%',
+    margin: 'auto',
     right: '1%',
     left: '1%',
     top: '20%',
@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SimpleModal() {
+export default function SimpleModal(props) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -56,8 +56,8 @@ export default function SimpleModal() {
   };
 
   const buttonStyle = {
-    padding: "5px 30px",
-    fontSize: "16px",
+    padding: "2px 15px",
+    fontSize: "12px",
     cursor: "pointer",
     backgroundColor: "rgb(255, 255, 255)"
   }
@@ -81,34 +81,34 @@ export default function SimpleModal() {
 
           <table>
 
-            <tbody>
+            <thead>
               <tr>
                 {/* table 1 - 1 row 3 columns */}
-                <td>
+                <th>
                   <div className="modalHeader">Added to Cart</div>
-                </td>
-                <td>
+                </th>
+                <th>
                   {/* blank */}
-                </td>
-                <td>
+                </th>
+                <th>
                   <div className="modalHeader">Cart Summary</div>
-                </td>
+                </th>
               </tr>
-            </tbody>
+            </thead>
 
             <tbody>
               {/* table 2 - 1 row 3 columns */}
               <tr>
                 <td>
                   <div className="modalImage">
-                    <img id="simple-modal-title" src={`${faker.image.image()}`} />
+                    <img id="simple-modal-title" src={`${ props.image }`} />
                   </div>
                 </td>
                 <td>
                   {/* blank */}
                 </td>
                 <td>
-                  <p id="modalQty" className="modalQtyItem"> ____ item(s): <span className="itemName">$777.77</span></p>
+                  <p id="modalQty" className="modalQtyItem"> {props.quantity} item(s): <span className="itemName">{props.price}</span></p>
                 </td>
               </tr>
             </tbody>
@@ -117,7 +117,7 @@ export default function SimpleModal() {
               {/* table 3 - 3 row 2 columns */}
               <tr>
                 <td>
-                  <p className="modalSelectedItem" id="simple-modal-description">Item in 🛒: <span className="itemName">{ faker.commerce.productName() } </span></p>
+                  <p className="modalSelectedItem" id="simple-modal-description">Item in 🛒: <span className="itemName"> { props.product } </span></p>
                 </td>
                 <td>
                   {/* blank */}
@@ -139,7 +139,7 @@ export default function SimpleModal() {
               </tr>
               <tr>
                 <td>
-                  <p id="modalQty" className="modalQty"> Quantity __</p>
+                  <p id="modalQty" className="modalQty"> Quantity selected: {props.items}</p>
                 </td>
                 <td>
                   {/* blank */}

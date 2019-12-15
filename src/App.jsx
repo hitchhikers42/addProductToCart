@@ -24,10 +24,11 @@ class App extends React.Component {
       selected: 1,        /**/
       qty: 0, //initially starts at zero
       total: 0,
-      cartItems: [],
+      cartItems: [], //add a property called quantity -> pass as props to the modal
       currentProduct: [],
       currentImage: "",
-      open: false
+      open: false,
+      price: "49.99"
     }
     this.handleChange = this.handleChange.bind(this)
     this.add = this.add.bind(this);
@@ -61,7 +62,7 @@ class App extends React.Component {
     const myJSON = await response.json();
     this.setState({currentProduct: myJSON,
     currentImage: myJSON[0].imageKey});
-    console.log(this.state.currentProduct[0].imageKey)
+    console.log('this is the log:',this.state.currentProduct[0].imageKey)
   }
 
   add(id) {
@@ -105,6 +106,8 @@ class App extends React.Component {
     } = this.state;
     const inCart = this.state.selectedOption
     const product = this.state.currentProduct[0];
+    const priceTotal = this.state.price * this.state.cartItems.length
+    let priceTotalDec2 = priceTotal.toFixed(2);
 
     //when I click add to cart, it has to use the id of the  product to the cart.
 
@@ -135,7 +138,13 @@ class App extends React.Component {
       <div className="cartUser" >
        {this.state.cartItems.length} items in your:
       </div>
-        <SimpleModal />
+        <SimpleModal
+          items={this.state.selectedOption.label}
+          quantity={this.state.cartItems.length}
+          product={product ? product.title : null}
+          image={this.state.currentImage}
+          price={priceTotalDec2}
+        />
       <div>
         <button className="addItem" type="button" onClick={() => this.add(product.productId)}>
           Add to Cart
