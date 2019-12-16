@@ -6,7 +6,7 @@ const data = require('../database/data.js');
 const fetchProduct = require('../database/index.js').fetchProduct
 
 const app = express();
-const PORT = 8800;
+const PORT = 3000;
 
 // seed data
 del();
